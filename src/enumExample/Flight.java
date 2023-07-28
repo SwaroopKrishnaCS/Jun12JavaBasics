@@ -26,5 +26,9 @@ public class Flight {
 			return typeOfFlight;
 		}
 	}
+	public FlightType getTypeOfFlight() {
+		
+		return typeOfFlight;
+	}
 
 }
