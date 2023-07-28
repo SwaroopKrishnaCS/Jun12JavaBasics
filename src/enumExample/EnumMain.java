@@ -1,6 +1,10 @@
 package enumExample;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import enumExample.Flight.FlightType;
 
@@ -13,8 +17,8 @@ public class EnumMain {
 
 		Flight airCanadaDomestic = new Flight("Air Canada Domestic", 100, FlightType.DOMESTIC);
 		Flight airCanadaInternational = new Flight("Air Canada International", 200, FlightType.INTERNATIONAL);
-		Flight airFranceInternational = new Flight("Air Canada International", 300, FlightType.INTERNATIONAL);
-		Flight airFranceDomestic = new Flight("Air Canada Domestic", 150, FlightType.DOMESTIC);
+		Flight airFranceInternational = new Flight("Air France International", 300, FlightType.INTERNATIONAL);
+		Flight airFranceDomestic = new Flight("Air France Domestic", 150, FlightType.DOMESTIC);
 
 		Flight[] allFlights = { airCanadaDomestic, airCanadaInternational, airFranceDomestic, airFranceInternational };
 		Flight[] filteredFlights = new Flight[2];
@@ -42,16 +46,20 @@ public class EnumMain {
 			System.out.println("Not a valid case");
 			break;
 		}
-		for (int j = 0; j < filteredFlights.length; j++) {
-			for (int i = 0; i < allFlights.length; i++) {
 
-				if (allFlights[i].typeOfFlight.getTypeOfFlight().equals(type.getTypeOfFlight())) {
+		int counter = 0;
+		for (int j = 0; j < allFlights.length; j++) {
+			if (allFlights[j].typeOfFlight.getTypeOfFlight().equals(type.getTypeOfFlight())) {
 
-					if (filteredFlights[j] == null) {
-						filteredFlights[j] = allFlights[i];
-					}
+				filteredFlights[counter] = allFlights[j];
+				counter++;
+				
+				if(filteredFlights.length==counter) {
+					break;
 				}
+
 			}
+
 		}
 
 	}
