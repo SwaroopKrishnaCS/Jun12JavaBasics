@@ -1,5 +1,7 @@
 package switchDemo;
 
+import accessModiferAndEncap.BankAccount;
+
 public class SwitchMain {
 
 	public static void main(String[] args) {
@@ -15,6 +17,7 @@ public class SwitchMain {
 
 		
 		calculator.performOperation();
+		
 		
 
 	}
