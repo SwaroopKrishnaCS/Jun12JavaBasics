@@ -18,6 +18,8 @@ public class RevnueCalculatorRunner {
 		cal = new RoyaltyShare();
 		double val = cal.calculate(engagement);
 		System.out.println("Royalty val " + val);
+
+
 	}
 
 }
