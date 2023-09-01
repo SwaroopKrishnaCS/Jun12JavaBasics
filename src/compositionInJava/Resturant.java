@@ -3,8 +3,9 @@ package compositionInJava;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Resturant {
+final public class Resturant {
 
+	private final int taxSlab= 10;
 	private String name;
 	private List<Dish> menu = new ArrayList<>();
 	private List<Chef> chefs = new ArrayList<>();
@@ -14,7 +15,7 @@ public class Resturant {
 		this.name = name;
 	}
 
-	public void addDishToMenu(Dish dish) {
+	public final void addDishToMenu(Dish dish) {
 		menu.add(dish);
 	}
 
